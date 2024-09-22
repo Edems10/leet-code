@@ -42,9 +42,6 @@ class Solution:
         unique_words = self.findUnique(dict)
         return unique_words
         
-        
-        
-        
 
 def main():
     tests = ["xf tyl xf",
@@ -55,4 +52,18 @@ def main():
         
 
 if __name__ =="__main__":
-    main()
+
+# Auto-generated code below aims at helping you parse
+# the standard input according to the problem statement.
+
+    while True:
+        highest_mountain = 0
+        highest_mountain_index = -1
+        remaining_mountains = 8
+        for i in range(remaining_mountains):
+            mountain_h = int(input())  # represents the height of one mountain.
+            if mountain_h > highest_mountain:
+                highest_mountain_index = i
+                highest_mountain = mountain_h
+        print(highest_mountain)
+        remaining_mountains -= remaining_mountains
