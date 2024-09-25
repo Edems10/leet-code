@@ -34,14 +34,6 @@ class Solution:
         else:
             return self.findlongestPrefix(data_2_hash,data_1_hash)
             
-        
-        
-        
-        
-                
-
-    
-    
     
     
 def main():
