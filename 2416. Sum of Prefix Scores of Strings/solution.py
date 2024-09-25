@@ -31,11 +31,9 @@ class Solution:
     def sumPrefixScores(self, words: List[str]) -> List[int]:
         trie = Trie()
         
-        # Step 1: Insert all words into the Trie
         for word in words:
             trie.insert(word)
         
-        # Step 2: Calculate prefix scores for each word
         result = []
         for word in words:
             result.append(trie.countPrefix(word))
