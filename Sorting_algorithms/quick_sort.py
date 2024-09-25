@@ -20,7 +20,6 @@ class QuickSort:
     def myQuickSortImplementation(self,array):
         if len(array)<=1:
             return array
-        
         pivot = array[0]
         s_array = []
         b_array = []
@@ -47,7 +46,14 @@ def wrapperMyQuickSort(qs:QuickSort):
         
 
 def main():
-    qs = QuickSort(generate_random_array(10000))
+    
+    numbers = generate_random_array(10000)
+    qs = QuickSort(array_to_sort=numbers)
+    print(qs.myQuickSortImplementation(qs.array))
+    
+    
+    
+    
     execution_time = timeit(lambda: wrapperNumpyQuickSort(qs), number=1000)
     print(f"Numpy Quicksort took {execution_time:.6f} seconds for 1000 runs for array of size {len(qs.array)}")
     execution_time = timeit(lambda: wrapperMyQuickSort(qs), number=1000)
