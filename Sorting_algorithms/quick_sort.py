@@ -29,39 +29,3 @@ class QuickSort:
             else:
                 b_array.append(x)
         return self.myQuickSortImplementation(s_array) +[pivot]+ self.myQuickSortImplementation(b_array)
-
-
-        
-            
-def generate_random_array(size:int) -> List[int]:
-    return [random.randint(0,100) for _ in range(size)]
-
-def wrapperNumpyQuickSort(qs:QuickSort):
-    """Function to wrap the quicksort call for timeit."""
-    qs.numpyQuickSort()
-
-def wrapperMyQuickSort(qs:QuickSort):
-    """Function to wrap the quicksort call for timeit."""
-    qs.myQuickSortImplementation(qs.array)
-        
-
-def main():
-    
-    numbers = generate_random_array(10000)
-    qs = QuickSort(array_to_sort=numbers)
-    print(qs.myQuickSortImplementation(qs.array))
-    
-    
-    
-    
-    execution_time = timeit(lambda: wrapperNumpyQuickSort(qs), number=1000)
-    print(f"Numpy Quicksort took {execution_time:.6f} seconds for 1000 runs for array of size {len(qs.array)}")
-    execution_time = timeit(lambda: wrapperMyQuickSort(qs), number=1000)
-    print(f"My Quicksort took {execution_time:.6f} seconds for 1000 runs for array of size {len(qs.array)}")
-
-
-
-if __name__ =="__main__":
-    main()
-
-
