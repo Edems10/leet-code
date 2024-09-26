@@ -1,5 +1,3 @@
-import random
-from timeit import timeit
 from typing import List
 import numpy
 
@@ -28,4 +26,8 @@ class QuickSort:
                 s_array.append(x)
             else:
                 b_array.append(x)
-        return self.myQuickSortImplementation(s_array) +[pivot]+ self.myQuickSortImplementation(b_array)
+        return (
+            self.myQuickSortImplementation(s_array) 
+            +[pivot]
+            + self.myQuickSortImplementation(b_array)
+        )
