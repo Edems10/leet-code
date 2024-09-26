@@ -4,11 +4,10 @@ class MyCalendar:
         self.bookings =[]
     
     def book(self, start: int, end: int) -> bool:
-        for existing_start, existing_end in self.bookings:
-            if not (end <= existing_start or start >= existing_end):
-                return False  # Overlap detected, reject the booking
+        for b_start, b_end in self.bookings:
+            if not (end <= b_start or start >= b_end):
+                return False  
         
-        # No overlap found, add the new booking
         self.bookings.append([start, end])
         return True
 
