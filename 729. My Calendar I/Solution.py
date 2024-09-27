@@ -1,4 +1,5 @@
 
+
 class MyCalendar:
     def __init__(self):
         self.bookings =[]
@@ -13,8 +14,19 @@ class MyCalendar:
 
 
 def main():
-    args1 = ["MyCalendar","book","book","book","book","book","book","book","book","book","book","book","book","book","book","book","book","book","book","book","book"]
-    args2 = [[],[97,100],[33,51],[89,100],[83,100],[75,92],[76,95],[19,30],[53,63],[8,23],[18,37],[87,100],[83,100],[54,67],[35,48],[58,75],[70,89],[13,32],[44,63],[51,62],[2,15]]
+    args1 = ["MyCalendar","book","book",
+             "book","book","book","book",
+             "book","book","book","book",
+             "book","book","book","book",
+             "book","book","book","book",
+             "book","book"]
+    args2 = [[],[97,100],[33,51],[89,100],
+             [83,100],[75,92],[76,95],
+             [19,30],[53,63],[8,23],
+             [18,37],[87,100],[83,100],
+             [54,67],[35,48],[58,75],
+             [70,89],[13,32],[44,63],
+             [51,62],[2,15]]
     obj = MyCalendar()
     for arg1,arg2 in zip(args1,args2):
         if arg1 == 'book':
