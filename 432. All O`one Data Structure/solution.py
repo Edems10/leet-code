@@ -33,7 +33,7 @@ class AllOne:
         key = str(key[0])
         found = self.all.get(key)
         if found !=1:
-            self.all[key]=found+-1
+            self.all[key]= found -1
         else:
             self.all.pop(key)
         count = self.all.get(key)
@@ -45,7 +45,7 @@ class AllOne:
         return self.max_name
 
     def getMinKey(self) -> str:
-        return self.max_name
+        return self.min_name
 if __name__ == "__main__":
     a1 = ["AllOne","inc","inc","getMaxKey","getMinKey","inc","getMaxKey","getMinKey"]
     a2 = [[],["hello"],["hello"],[],[],["leet"],[],[]]
