@@ -11,7 +11,7 @@ class Solution:
         added_underscore = 0
         while(pointer_left<=pointer_right):
             while(nums[pointer_left]==val):
-                if pointer_left<=pointer_right:
+                if pointer_left>pointer_right:
                     break
                 nums[pointer_left] = nums[pointer_right]
                 nums[pointer_right] = '_'
