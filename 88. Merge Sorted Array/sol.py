@@ -21,7 +21,7 @@ class Solution:
                 temp = nums1[i]
                 nums1[i]=nums2[second_iter]
                 nums2[second_iter] = temp
-                if second_iter<=n:
+                if second_iter<n-1:
                     temp_iter = second_iter+1
                     while(temp>nums2[temp_iter]):
                         nums2[temp_iter-1] = nums2[temp_iter]
@@ -30,11 +30,7 @@ class Solution:
                             temp_iter = temp_iter +1
                         else:
                             break
-                
-            
-                
-        
-        
+             
 s = Solution()
 s.merge([4,5,6,0,0,0]
 ,3,[1,2,3],3)
