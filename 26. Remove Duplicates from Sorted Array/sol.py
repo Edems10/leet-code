@@ -4,19 +4,20 @@ from typing import List
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
         unique = set()
-        final_length = len(nums)
+        duplicates_found = 0
         i = 0
         while(i<len(nums)):
+            if nums[i] == None:
+                break
             if nums[i] in unique:
                 nums.pop(i)
+                nums.append(None)
+                duplicates_found = duplicates_found+1
             else:
                 unique.add(nums[i])
                 i=i+1
+        return len(nums)-duplicates_found
         
-        final_unique_length = len(nums)
-        for _ in range(final_length-final_unique_length):
-            nums.append('_')
-        return final_unique_length
         
 
 if __name__ =="__main__":
