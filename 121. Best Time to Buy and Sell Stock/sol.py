@@ -7,15 +7,14 @@ class Solution:
         min = float('inf')
         max_profit = 0
         for iterator, price in enumerate(prices):
-            if iterator+1 == len(price):
+            if iterator+1 == len(prices):
                 break
             current_price = prices[iterator+1]
-            current_profit = min - current_price
-            if current_profit> max_profit:
-                max_profit = current_profit
             if price<min:
                 min = price
-            
+            current_profit = current_price - min
+            if current_profit> max_profit:
+                max_profit = current_profit
                 
         return max_profit
             
