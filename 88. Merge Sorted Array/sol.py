@@ -13,24 +13,24 @@ class Solution:
         elif n == 0:
             return
         second_iter = 0
-        for i in range(m+n):
+        for i in range(m + n):
             if i >= m:
                 nums1[i] = nums2[second_iter]
-                second_iter = second_iter +1
-            elif nums1[i]>nums2[second_iter]:
+                second_iter = second_iter + 1
+            elif nums1[i] > nums2[second_iter]:
                 temp = nums1[i]
-                nums1[i]=nums2[second_iter]
+                nums1[i] = nums2[second_iter]
                 nums2[second_iter] = temp
-                if second_iter<n-1:
-                    temp_iter = second_iter+1
-                    while(temp>nums2[temp_iter]):
-                        nums2[temp_iter-1] = nums2[temp_iter]
+                if second_iter < n - 1:
+                    temp_iter = second_iter + 1
+                    while temp > nums2[temp_iter]:
+                        nums2[temp_iter - 1] = nums2[temp_iter]
                         nums2[temp_iter] = temp
-                        if temp_iter<n-1:
-                            temp_iter = temp_iter +1
+                        if temp_iter < n - 1:
+                            temp_iter = temp_iter + 1
                         else:
                             break
-             
+
+
 s = Solution()
-s.merge([4,5,6,0,0,0]
-,3,[1,2,3],3)
+s.merge([4, 5, 6, 0, 0, 0], 3, [1, 2, 3], 3)
