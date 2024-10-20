@@ -36,7 +36,7 @@ def narray_numpy_sorting(array: np.ndarray, kind="quicksort") -> List[int]:
 def main():
 
     ARRAY_SIZE = 50000
-    NUMBER_OF_TESTS = 100
+    NUMBER_OF_TESTS = 10
     numbers_array = generate_random_array(ARRAY_SIZE)
     np_numbers_array = generate_random_nparray(ARRAY_SIZE)
     qs = QuickSort(array_to_sort=numbers_array)
