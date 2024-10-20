@@ -1,10 +1,11 @@
 from collections import deque
 
+
 class MyCircularDeque:
 
     def __init__(self, k: int):
         self.deque = deque(maxlen=k)
-        
+
     def insertFront(self, value: int) -> bool:
         if self.isFull():
             return False
@@ -40,16 +41,15 @@ class MyCircularDeque:
         return self.deque[-1]
 
     def isEmpty(self) -> bool:
-        if len(self.deque)>0:
+        if len(self.deque) > 0:
             return False
         return True
 
     def isFull(self) -> bool:
-        if self.deque.maxlen==len(self.deque):
+        if self.deque.maxlen == len(self.deque):
             return True
         else:
             return False
-    
 
 
 # Your MyCircularDeque object will be instantiated and called as such:
