@@ -12,7 +12,7 @@ class Solution:
         return word_dict
 
     def findwords(self, s1: str, word_dict: dict = None) -> dict:
-        if word_dict == None:
+        if word_dict is None:
             word_dict = {}
         word = ""
         for char in s1:

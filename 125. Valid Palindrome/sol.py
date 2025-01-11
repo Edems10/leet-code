@@ -7,13 +7,13 @@ class Solution:
 
     def isPalindrome(self, s: str) -> bool:
         cleaned_string = self.remove_non_alphanumeric(s).lower()
-        l = 0
-        r = len(cleaned_string) - 1
-        while l < r:
-            if cleaned_string[l] != cleaned_string[r]:
+        left = 0
+        right = len(cleaned_string) - 1
+        while left < right:
+            if cleaned_string[left] != cleaned_string[right]:
                 return False
-            l = l + 1
-            r = r - 1
+            left = left + 1
+            right = right - 1
         return True
 
 

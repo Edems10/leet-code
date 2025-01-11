@@ -13,8 +13,8 @@ class Solution:
         list_ended = False
         current_values = {}
         list_iterator = 0
-        while list_ended != True:
-            if lists[list_iterator] != None:
+        while not list_ended:
+            if lists[list_iterator] is not None:
                 current_number = lists[list_iterator].val
                 current_values[list_iterator] = current_number
             list_iterator += 1
@@ -26,8 +26,8 @@ class Solution:
         if len(lists) == 0:
             return False
         for list in lists:
-            if list != None:
-                if type(list.val) == int:
+            if list is not None:
+                if isinstance(list.val) is int:
                     return True
         return False
 
@@ -43,7 +43,7 @@ class Solution:
             current_head.next = ListNode(current_values[min_index])
             current_head = current_head.next
             lists[min_index] = lists[min_index].next
-            if lists[min_index] != None:
+            if lists[min_index] is not None:
                 current_values[min_index] = lists[min_index].val
             else:
                 current_values.pop(min_index)

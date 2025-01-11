@@ -17,7 +17,7 @@ class Solution:
         self.visited_list.add(head)
         current = head.next
         while current:
-            if not current in self.visited_list:
+            if current not in self.visited_list:
                 self.visited_list.add(current)
                 current = current.next
             else:

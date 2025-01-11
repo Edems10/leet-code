@@ -7,13 +7,13 @@ class Solution:
         i = 0
         dup_removed = 0
         while i < len(nums):
-            if nums[i] == None:
+            if nums[i] is None:
                 break
             found = found_dict.get(nums[i])
             if found == 1:
                 found_dict[nums[i]] = found + 1
                 i = i + 1
-            elif found == None:
+            elif found is None:
                 found_dict[nums[i]] = 1
                 i = i + 1
             elif found == 2:
