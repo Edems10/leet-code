@@ -12,7 +12,7 @@ class QuickSort:
         return numpy.sort(self.array, kind="quicksort")
 
     def checkArrayExists(self) -> bool:
-        if self.array != None and len(self.array) > 1:
+        if self.array is not None and len(self.array) > 1:
             return True
         return False
 

@@ -23,7 +23,7 @@ class Solution:
         digits = digits[1:]
         current_combinations = combinations
         current_keyboard = keyboard.get(current_digit)
-        if current_combinations == None:
+        if current_combinations is None:
             current_combinations = []
             for key in keyboard.get(current_digit):
                 current_combinations.append(key)

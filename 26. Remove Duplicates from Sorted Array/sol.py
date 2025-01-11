@@ -7,7 +7,7 @@ class Solution:
         duplicates_found = 0
         i = 0
         while i < len(nums):
-            if nums[i] == None:
+            if nums[i] is None:
                 break
             if nums[i] in unique:
                 nums.pop(i)
