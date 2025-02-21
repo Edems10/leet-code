@@ -8,7 +8,6 @@ class ListNode:
 
 
 class Solution:
-
     def fill_first_values(self, lists: List[Optional[ListNode]]):
         list_ended = False
         current_values = {}

@@ -1,5 +1,4 @@
 class AllOne:
-
     def __init__(self):
         self.all = {}
         self.max = float("-inf")

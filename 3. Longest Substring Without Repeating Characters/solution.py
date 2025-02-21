@@ -11,7 +11,6 @@ class Solution(object):
         substring_begin = 0
         word_length = len(s)
         while iter < word_length:
-
             current_char = s[iter]
             if current_char not in dict_checker:
                 iter += 1

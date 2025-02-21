@@ -2,7 +2,6 @@ from collections import deque
 
 
 class MyCircularDeque:
-
     def __init__(self, k: int):
         self.deque = deque(maxlen=k)
 

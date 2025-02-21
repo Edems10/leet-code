@@ -2,7 +2,6 @@ from typing import List
 
 
 class Solution:
-
     def appendIfUnique(self, word_dict: dict, word: str):
         word_exists = word_dict.get(word)
         if word_exists:
@@ -49,7 +48,6 @@ def main():
 
 
 if __name__ == "__main__":
-
     # Auto-generated code below aims at helping you parse
     # the standard input according to the problem statement.
 

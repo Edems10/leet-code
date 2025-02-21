@@ -2,7 +2,6 @@ from typing import List
 
 
 class Solution:
-
     def arrayToHash(self, arr1: List[int]) -> dict:
         final_hash = {}
         for number in arr1:

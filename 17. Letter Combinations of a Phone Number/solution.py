@@ -13,9 +13,7 @@ keyboard = {
 
 
 class Solution:
-
     def recursionletterHelper(self, digits: str, combinations=None):
-
         if digits == "":
             return combinations
 
