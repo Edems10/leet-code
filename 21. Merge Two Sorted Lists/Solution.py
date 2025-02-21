@@ -1,15 +1,19 @@
 from typing import Optional
 
+
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
 
+
 class Solution:
-    def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+    def mergeTwoLists(
+        self, list1: Optional[ListNode], list2: Optional[ListNode]
+    ) -> Optional[ListNode]:
         head_holder = ListNode()
         current = head_holder
-        
+
         while list1 and list2:
             if list1.val <= list2.val:
                 current.next = ListNode(list1.val)
@@ -18,20 +22,20 @@ class Solution:
                 current.next = ListNode(list2.val)
                 list2 = list2.next
             current = current.next
-        
+
         while list1:
             current.next = ListNode(list1.val)
             current = current.next
             list1 = list1.next
-        
+
         while list2:
             current.next = ListNode(list2.val)
             current = current.next
             list2 = list2.next
-        
+
         return head_holder.next
 
-# Helper functions
+
 def create_list_nodes(sequence) -> ListNode:
     """Create a linked list from a sequence of numbers."""
     dummy = ListNode()
@@ -40,6 +44,7 @@ def create_list_nodes(sequence) -> ListNode:
         current.next = ListNode(number)
         current = current.next
     return dummy.next
+
 
 def print_linked_list(list_node: ListNode) -> None:
     """Print all values in a linked list."""
@@ -50,19 +55,16 @@ def print_linked_list(list_node: ListNode) -> None:
         current = current.next
     print(" -> ".join(values))
 
-# Test the solution
+
 if __name__ == "__main__":
-    # Create test lists
     list1 = create_list_nodes([1, 4])
     list2 = create_list_nodes([1, 3])
-    
-    # Print input lists
+
     print("List 1:", end=" ")
     print_linked_list(list1)
     print("List 2:", end=" ")
     print_linked_list(list2)
-    
-    # Merge lists and print result
+
     solution = Solution()
     merged = solution.mergeTwoLists(list1, list2)
     print("Merged:", end=" ")
