@@ -4,7 +4,7 @@ from typing import List
 class Solution:
     def moveZeroes(self, nums: List[int]) -> None:
         for i in range(len(nums)):
-            if nums[i] > 0:
+            if nums[i] != 0:
                 for j in range(0, i):
                     if nums[j] == 0:
                         nums[j] = nums[i]
