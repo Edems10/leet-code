@@ -1,2 +1,3 @@
 .venv
 .ruff_cache
+extras/fast_api/model/__pycache__/user.cpython-313.pyc
