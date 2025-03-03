@@ -3,9 +3,8 @@ from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-from pydantic import BaseModel, EmailStr
-from typing import Optional, List
-from model.user import User,UserORM,UserName
+from typing import List
+from model.user import User, UserORM, UserName
 
 app = FastAPI()
 
@@ -27,6 +26,7 @@ def get_db():
     finally:
         db.close()
 
+
 @app.post("/users/", response_model=User)
 def create_user(user: str, db: Session = Depends(get_db)):
     db_user = UserORM(
@@ -34,17 +34,20 @@ def create_user(user: str, db: Session = Depends(get_db)):
         first_name=user.name.first,
         last_name=user.name.last,
         email=user.email,
-        picture=user.picture
+        picture=user.picture,
     )
     db.add(db_user)
     db.commit()
     db.refresh(db_user)
     return User(
         id=db_user.id,
-        name=UserName(title=db_user.title, first=db_user.first_name, last=db_user.last_name),
+        name=UserName(
+            title=db_user.title, first=db_user.first_name, last=db_user.last_name
+        ),
         email=db_user.email,
-        picture=db_user.picture
+        picture=db_user.picture,
     )
+
 
 @app.get("/users/", response_model=List[User])
 def read_users(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
@@ -54,9 +57,11 @@ def read_users(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
             id=user.id,
             name=UserName(title=user.title, first=user.first_name, last=user.last_name),
             email=user.email,
-            picture=user.picture
-        ) for user in users
+            picture=user.picture,
+        )
+        for user in users
     ]
+
 
 @app.get("/users/{user_id}", response_model=User)
 def read_user(user_id: int, db: Session = Depends(get_db)):
@@ -65,7 +70,9 @@ def read_user(user_id: int, db: Session = Depends(get_db)):
         raise HTTPException(status_code=404, detail="User not found")
     return User(
         id=db_user.id,
-        name=UserName(title=db_user.title, first=db_user.first_name, last=db_user.last_name),
+        name=UserName(
+            title=db_user.title, first=db_user.first_name, last=db_user.last_name
+        ),
         email=db_user.email,
-        picture=db_user.picture
+        picture=db_user.picture,
     )

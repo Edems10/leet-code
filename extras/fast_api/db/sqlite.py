@@ -1,15 +1,16 @@
 from typing import List
-from sqlalchemy import create_engine, insert, select
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from base import Database
 from model.user import User
+
 
 class SQLiteDatabase(Database):
     def __init__(self, db_url):
         self.engine = create_engine(db_url)
         self.Session = sessionmaker(bind=self.engine)
 
-    def insert_user(self, user:User)->bool:
+    def insert_user(self, user: User) -> bool:
         with self.Session() as session:
             try:
                 session.add(user)
