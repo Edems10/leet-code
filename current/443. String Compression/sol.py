@@ -23,7 +23,7 @@ class Solution:
         for j in range(extra_space):
             replace_index = i+1-same_count+j
             chars[replace_index]=same_count_str[j]
-        return chars,i-same_count-1+extra_space
+        return chars,i-same_count+extra_space
     
     def compress(self, chars: List[str]) -> int:
         same_count =0
